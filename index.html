@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForeverX | Global Longevity Center Marketplace</title>
+    <meta
+      name="description"
+      content="An elegant global marketplace for discovering fictional longevity centers, with a private CRM console for providers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=topbar" />
+  </head>
+  <body>
+    <section class="market-app" id="marketApp">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="ForeverX">
+          <span class="brand-mark">FX</span>
+          <span>
+            <strong>ForeverX</strong>
+            <small data-i18n="brandSub">Longevity marketplace</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Marketplace navigation">
+          <a href="#centers" data-i18n="navCenters">Centers</a>
+          <a href="#atlas" data-i18n="navAtlas">Atlas</a>
+          <a href="#standards" data-i18n="navStandards">Standards</a>
+        </nav>
+
+        <div class="top-actions">
+          <div class="language-switcher" aria-label="Language selector">
+            <button class="active" type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="de">DE</button>
+            <button type="button" data-lang="fr">FR</button>
+            <button type="button" data-lang="es">ES</button>
+          </div>
+          <button class="console-button" type="button" id="openCrm" aria-label="Provider access">
+            <i data-lucide="key-round"></i>
+            <span data-i18n="crmButton">Provider access</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-content">
+            <span class="eyebrow" data-i18n="heroEyebrow">Curated global longevity</span>
+            <h1 data-i18n="heroTitle">The world’s most refined longevity centers, in one private marketplace.</h1>
+            <p data-i18n="heroText">
+              Discover elite medical wellness, diagnostics, recovery and age-management destinations across continents.
+              Every profile is fictional, designed to show how ForeverX can present verified centers with elegance.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#centers">
+                <i data-lucide="sparkles"></i>
+                <span data-i18n="exploreButton">Explore centers</span>
+              </a>
+              <a class="ghost-button glass" href="#listCenter">
+                <i data-lucide="send"></i>
+                <span data-i18n="listHeroButton">List your center</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="search-panel" id="searchForm">
+            <span class="panel-kicker" data-i18n="searchKicker">Concierge search</span>
+            <label>
+              <span data-i18n="regionLabel">Region</span>
+              <select id="regionFilter">
+                <option value="all" data-i18n="allRegions">All regions</option>
+                <option value="Europe" data-i18n="europe">Europe</option>
+                <option value="Americas" data-i18n="americas">Americas</option>
+                <option value="Asia Pacific" data-i18n="asiaPacific">Asia Pacific</option>
+                <option value="Middle East & Africa" data-i18n="mea">Middle East & Africa</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="programLabel">Primary program</span>
+              <select id="programFilter">
+                <option value="all" data-i18n="allPrograms">All programs</option>
+                <option value="diagnostics" data-i18n="diagnostics">Diagnostics</option>
+                <option value="regeneration" data-i18n="regeneration">Regeneration</option>
+                <option value="metabolic" data-i18n="metabolic">Metabolic health</option>
+                <option value="recovery" data-i18n="recovery">Recovery</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="stayLabel">Preferred stay</span>
+              <select id="stayFilter">
+                <option value="all" data-i18n="anyStay">Any stay length</option>
+                <option value="3-5">3-5 days</option>
+                <option value="7-10">7-10 days</option>
+                <option value="14+">14+ days</option>
+              </select>
+            </label>
+            <button class="primary-button full" type="submit">
+              <i data-lucide="search"></i>
+              <span data-i18n="searchButton">Refine selection</span>
+            </button>
+          </form>
+        </section>
+
+        <section class="market-section" id="centers">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow" data-i18n="marketEyebrow">Global portfolio</span>
+              <h2 data-i18n="marketTitle">Longevity centers across the world</h2>
+            </div>
+            <div class="market-stat">
+              <i data-lucide="globe-2"></i>
+              <strong id="matchCount">8</strong>
+              <span data-i18n="matchesLabel">curated matches</span>
+            </div>
+          </div>
+
+          <div class="quick-filters" aria-label="Program filters">
+            <button class="chip active" type="button" data-specialty="all" data-i18n="allSpecialties">All</button>
+            <button class="chip" type="button" data-specialty="diagnostics" data-i18n="diagnostics">Diagnostics</button>
+            <button class="chip" type="button" data-specialty="regeneration" data-i18n="regeneration">Regeneration</button>
+            <button class="chip" type="button" data-specialty="metabolic" data-i18n="metabolic">Metabolic health</button>
+            <button class="chip" type="button" data-specialty="recovery" data-i18n="recovery">Recovery</button>
+          </div>
+
+          <div class="market-layout">
+            <div class="center-grid" id="centerGrid"></div>
+
+            <aside class="atlas-panel" id="atlas">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow" data-i18n="atlasEyebrow">World atlas</span>
+                  <h3 data-i18n="atlasTitle">Quiet access, global reach</h3>
+                </div>
+                <span class="live-signal">Live</span>
+              </div>
+              <div class="world-map" id="worldMap"></div>
+              <div class="atlas-metrics">
+                <article>
+                  <strong>28</strong>
+                  <span data-i18n="countriesMetric">countries in pipeline</span>
+                </article>
+                <article>
+                  <strong>4</strong>
+                  <span data-i18n="languagesMetric">marketplace languages</span>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="standards-band" id="standards">
+          <article>
+            <i data-lucide="stethoscope"></i>
+            <h3 data-i18n="standardOneTitle">Clinical clarity</h3>
+            <p data-i18n="standardOneText">Profiles separate diagnostics, therapies, recovery and concierge services so visitors can compare with confidence.</p>
+          </article>
+          <article>
+            <i data-lucide="badge-check"></i>
+            <h3 data-i18n="standardTwoTitle">Elegant verification</h3>
+            <p data-i18n="standardTwoText">Each listing can show fictional accreditations, physician oversight, language coverage and care pathways.</p>
+          </article>
+          <article>
+            <i data-lucide="messages-square"></i>
+            <h3 data-i18n="standardThreeTitle">Warm handoff</h3>
+            <p data-i18n="standardThreeText">Hover any center to reveal connection details, concierge contacts and the next best step.</p>
+          </article>
+        </section>
+
+        <section class="provider-cta" id="listCenter">
+          <div>
+            <span class="eyebrow" data-i18n="providerEyebrow">For longevity operators</span>
+            <h2 data-i18n="providerTitle">Want your center to appear in the ForeverX marketplace?</h2>
+            <p data-i18n="providerText">
+              Contact ForeverX to review your eligibility, marketplace presentation, CRM access and concierge lead flow.
+            </p>
+          </div>
+          <button class="provider-button" type="button" id="providerContact">
+            <i data-lucide="mail"></i>
+            <span data-i18n="providerButton">Contact ForeverX</span>
+          </button>
+        </section>
+      </main>
+    </section>
+
+    <section class="crm-app" id="crmApp" aria-hidden="true">
+      <aside class="crm-sidebar" aria-label="ForeverX CRM navigation">
+        <a class="brand crm-brand" href="#crmHome">
+          <span class="brand-mark">FX</span>
+          <span>
+            <strong>ForeverX</strong>
+            <small data-i18n="crmBrandSub">Provider console</small>
+          </span>
+        </a>
+
+        <nav class="crm-nav">
+          <a class="active" href="#crmHome"><i data-lucide="activity"></i> <span data-i18n="crmOverview">Overview</span></a>
+          <a href="#crmLeads"><i data-lucide="kanban-square"></i> <span data-i18n="crmLeads">Leads</span></a>
+          <a href="#crmSuites"><i data-lucide="heart-pulse"></i> <span data-i18n="crmPrograms">Programs</span></a>
+          <a href="#crmProfile"><i data-lucide="landmark"></i> <span data-i18n="crmProfile">Listing profile</span></a>
+        </nav>
+
+        <button class="market-return" type="button" id="exitCrm">
+          <i data-lucide="arrow-left"></i>
+          <span data-i18n="returnMarket">Back to marketplace</span>
+        </button>
+      </aside>
+
+      <main class="crm-main">
+        <header class="crm-topbar" id="crmHome">
+          <div>
+            <span class="eyebrow" data-i18n="crmEyebrow">ForeverX partner CRM</span>
+            <h1 data-i18n="crmTitle">Manage center visibility, enquiries and program demand.</h1>
+          </div>
+          <div class="crm-actions">
+            <button class="ghost-button" type="button" id="addLeadBtn">
+              <i data-lucide="user-plus"></i>
+              <span data-i18n="newLead">New lead</span>
+            </button>
+            <button class="primary-button compact" type="button" id="syncBtn">
+              <i data-lucide="refresh-cw"></i>
+              <span data-i18n="sync">Sync</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="crm-metrics">
+          <article class="metric featured">
+            <span data-i18n="metricRevenue">Qualified pipeline</span>
+            <strong id="pipelineMetric">$1.84M</strong>
+            <small data-i18n="metricRevenueSub">projected annual value</small>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricLeads">Open enquiries</span>
+            <strong id="openLeadMetric">18</strong>
+            <small data-i18n="metricLeadsSub">6 concierge-ready</small>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricConversion">Match quality</span>
+            <strong>92%</strong>
+            <small data-i18n="metricConversionSub">based on intent fit</small>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricLanguages">Languages served</span>
+            <strong>9</strong>
+            <small data-i18n="metricLanguagesSub">EN, DE, FR, ES plus more</small>
+          </article>
+        </section>
+
+        <section class="crm-workspace">
+          <section class="crm-panel" id="crmLeads">
+            <div class="console-head">
+              <div>
+                <span class="eyebrow" data-i18n="leadEyebrow">Concierge pipeline</span>
+                <h2 data-i18n="leadTitle">High-intent enquiries</h2>
+              </div>
+              <button class="icon-button" type="button" aria-label="Filter leads">
+                <i data-lucide="filter"></i>
+              </button>
+            </div>
+            <div class="lead-board" id="leadBoard"></div>
+          </section>
+
+          <section class="crm-panel" id="crmSuites">
+            <div class="console-head">
+              <div>
+                <span class="eyebrow" data-i18n="programEyebrow">Program inventory</span>
+                <h2 data-i18n="programTitle">Signature pathways</h2>
+              </div>
+              <div class="segmented" aria-label="Program view">
+                <button class="active" type="button" data-i18n="now">Now</button>
+                <button type="button" data-i18n="quarter">Quarter</button>
+                <button type="button" data-i18n="year">Year</button>
+              </div>
+            </div>
+            <div class="program-list" id="programList"></div>
+          </section>
+        </section>
+
+        <section class="profile-console" id="crmProfile">
+          <div class="profile-preview">
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+              alt="Fictional longevity clinic interior"
+            />
+            <div>
+              <span class="eyebrow" data-i18n="profileEyebrow">Marketplace profile</span>
+              <h2>Vellora Institute Geneva</h2>
+              <p data-i18n="profileText">Diagnostics-first flagship listing with private physician review, recovery suites and family-office concierge.</p>
+            </div>
+          </div>
+          <div class="profile-controls">
+            <label>
+              <span data-i18n="profileRate">Program from</span>
+              <input type="text" value="$8,900" />
+            </label>
+            <label>
+              <span data-i18n="profileMessage">Commercial message</span>
+              <input type="text" value="Precision diagnostics, calm hospitality and medically governed recovery." />
+            </label>
+            <button class="primary-button" type="button">
+              <i data-lucide="save"></i>
+              <span data-i18n="saveProfile">Save profile</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <dialog class="center-dialog" id="centerDialog">
+      <form method="dialog" class="center-modal">
+        <button class="icon-button close-button" type="button" id="closeDialog" aria-label="Close">
+          <i data-lucide="x"></i>
+        </button>
+        <img id="modalImage" alt="" />
+        <div class="modal-content">
+          <span class="eyebrow" id="modalRegion"></span>
+          <h2 id="modalTitle"></h2>
+          <p id="modalSummary"></p>
+          <div class="modal-details" id="modalDetails"></div>
+          <div class="contact-box">
+            <div>
+              <span data-i18n="contactLine">Fictional concierge contact</span>
+              <strong id="modalContact"></strong>
+            </div>
+            <button class="primary-button compact" type="button" id="requestIntro">
+              <i data-lucide="mail-check"></i>
+              <span data-i18n="requestIntro">Request intro</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" src="./script.js?v=topbar"></script>
+  </body>
+</html>
