@@ -3,34 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ForeverX | Global Longevity Center Marketplace</title>
-    <meta
-      name="description"
-      content="An elegant global marketplace for discovering fictional longevity centers, with a private CRM console for providers."
-    />
+    <title>AeternaCo · Private Longevity Destinations</title>
+    <meta name="description" content="A curated private marketplace of the world's most distinguished longevity centers." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=topbar" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+
+    <!-- ═══ MARKETPLACE ═══ -->
     <section class="market-app" id="marketApp">
-      <header class="topbar">
-        <a class="brand" href="#home" aria-label="ForeverX">
-          <span class="brand-mark">FX</span>
-          <span>
-            <strong>ForeverX</strong>
-            <small data-i18n="brandSub">Longevity marketplace</small>
+
+      <header class="topbar" id="topbar">
+        <a class="brand" href="#home" aria-label="AeternaCo">
+          <span class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M11 4 L11 18 M4 11 L18 11" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><circle cx="11" cy="11" r="3" fill="currentColor" opacity=".35"/></svg>
+          </span>
+          <span class="brand-text">
+            <strong>AeternaCo</strong>
+            <small data-i18n="brandSub">Private longevity</small>
           </span>
         </a>
 
-        <nav class="main-nav" aria-label="Marketplace navigation">
-          <a href="#centers" data-i18n="navCenters">Centers</a>
-          <a href="#atlas" data-i18n="navAtlas">Atlas</a>
-          <a href="#standards" data-i18n="navStandards">Standards</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#destinations" data-i18n="navDestinations">Destinations</a>
+          <a href="#treatments" data-i18n="navTreatments">Treatments</a>
+          <a href="#philosophy" data-i18n="navPhilosophy">Philosophy</a>
+          <a href="#membership" data-i18n="navMembership">Membership</a>
         </nav>
 
         <div class="top-actions">
@@ -40,170 +40,318 @@
             <button type="button" data-lang="fr">FR</button>
             <button type="button" data-lang="es">ES</button>
           </div>
-          <button class="console-button" type="button" id="openCrm" aria-label="Provider access">
+          <button class="console-button" type="button" id="openCrm">
             <i data-lucide="key-round"></i>
-            <span data-i18n="crmButton">Provider access</span>
+            <span data-i18n="crmButton">Partner access</span>
+          </button>
+          <button class="reserve-topbar-btn" type="button" id="topbarReserve">
+            <i data-lucide="calendar-check"></i>
+            <span data-i18n="reserveNav">Reserve a stay</span>
           </button>
         </div>
       </header>
 
       <main>
+
+        <!-- HERO -->
         <section class="hero" id="home">
-          <div class="hero-content">
-            <span class="eyebrow" data-i18n="heroEyebrow">Curated global longevity</span>
-            <h1 data-i18n="heroTitle">The world’s most refined longevity centers, in one private marketplace.</h1>
-            <p data-i18n="heroText">
-              Discover elite medical wellness, diagnostics, recovery and age-management destinations across continents.
-              Every profile is fictional, designed to show how ForeverX can present verified centers with elegance.
-            </p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#centers">
-                <i data-lucide="sparkles"></i>
-                <span data-i18n="exploreButton">Explore centers</span>
-              </a>
-              <a class="ghost-button glass" href="#listCenter">
-                <i data-lucide="send"></i>
-                <span data-i18n="listHeroButton">List your center</span>
-              </a>
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-inner">
+            <div class="hero-content">
+              <span class="eyebrow animate-in" data-i18n="heroEyebrow">Curated longevity · 14 destinations worldwide</span>
+              <h1 class="animate-in" data-i18n="heroTitle">Where medicine meets the art of living longer.</h1>
+              <p class="animate-in" data-i18n="heroText">AeternaCo is a private concierge network for elite longevity centers — from the Swiss Alps to the Cuban coast, the Yucatán jungle, and Cape Town's vineyards. All names are fictional, crafted to demonstrate how AeternaCo presents exceptional centers with the discretion they deserve.</p>
+              <div class="hero-actions animate-in">
+                <a class="cta-primary" href="#destinations">
+                  <span data-i18n="exploreButton">Explore destinations</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <button class="cta-ghost" type="button" id="heroReserve">
+                  <i data-lucide="calendar-check"></i>
+                  <span data-i18n="reserveButton">Reserve a stay</span>
+                </button>
+              </div>
+            </div>
+            <div class="hero-stats animate-in">
+              <div class="stat-pill">
+                <strong>14</strong>
+                <span data-i18n="statDestinations">Elite destinations</span>
+              </div>
+              <div class="stat-pill">
+                <strong>4</strong>
+                <span data-i18n="statContinents">Continents</span>
+              </div>
+              <div class="stat-pill">
+                <strong>98%</strong>
+                <span data-i18n="statSatisfaction">Guest satisfaction</span>
+              </div>
             </div>
           </div>
-
-          <form class="search-panel" id="searchForm">
-            <span class="panel-kicker" data-i18n="searchKicker">Concierge search</span>
-            <label>
-              <span data-i18n="regionLabel">Region</span>
-              <select id="regionFilter">
-                <option value="all" data-i18n="allRegions">All regions</option>
-                <option value="Europe" data-i18n="europe">Europe</option>
-                <option value="Americas" data-i18n="americas">Americas</option>
-                <option value="Asia Pacific" data-i18n="asiaPacific">Asia Pacific</option>
-                <option value="Middle East & Africa" data-i18n="mea">Middle East & Africa</option>
-              </select>
-            </label>
-            <label>
-              <span data-i18n="programLabel">Primary program</span>
-              <select id="programFilter">
-                <option value="all" data-i18n="allPrograms">All programs</option>
-                <option value="diagnostics" data-i18n="diagnostics">Diagnostics</option>
-                <option value="regeneration" data-i18n="regeneration">Regeneration</option>
-                <option value="metabolic" data-i18n="metabolic">Metabolic health</option>
-                <option value="recovery" data-i18n="recovery">Recovery</option>
-              </select>
-            </label>
-            <label>
-              <span data-i18n="stayLabel">Preferred stay</span>
-              <select id="stayFilter">
-                <option value="all" data-i18n="anyStay">Any stay length</option>
-                <option value="3-5">3-5 days</option>
-                <option value="7-10">7-10 days</option>
-                <option value="14+">14+ days</option>
-              </select>
-            </label>
-            <button class="primary-button full" type="submit">
-              <i data-lucide="search"></i>
-              <span data-i18n="searchButton">Refine selection</span>
-            </button>
-          </form>
+          <div class="search-panel">
+            <p class="panel-kicker" data-i18n="searchKicker">Concierge search</p>
+            <form id="searchForm">
+              <label>
+                <span data-i18n="regionLabel">Destination</span>
+                <select id="regionFilter">
+                  <option value="all" data-i18n="allRegions">All destinations</option>
+                  <option value="Europe" data-i18n="europe">Europe</option>
+                  <option value="Americas" data-i18n="americas">Americas</option>
+                  <option value="Asia Pacific" data-i18n="asiaPacific">Asia Pacific</option>
+                  <option value="Middle East & Africa" data-i18n="mea">Africa & Middle East</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="programLabel">Treatment focus</span>
+                <select id="programFilter">
+                  <option value="all" data-i18n="allPrograms">All programs</option>
+                  <option value="diagnostics" data-i18n="diagnostics">Precision diagnostics</option>
+                  <option value="regeneration" data-i18n="regeneration">Regeneration</option>
+                  <option value="metabolic" data-i18n="metabolic">Metabolic health</option>
+                  <option value="recovery" data-i18n="recovery">Recovery & longevity</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="stayLabel">Duration</span>
+                <select id="stayFilter">
+                  <option value="all" data-i18n="anyStay">Any duration</option>
+                  <option value="3-5">3–5 days</option>
+                  <option value="7-10">7–10 days</option>
+                  <option value="14+">14+ days</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="budgetLabel">Investment</span>
+                <select id="budgetFilter">
+                  <option value="all" data-i18n="anyBudget">Any range</option>
+                  <option value="under10k">Under $10,000</option>
+                  <option value="10k-20k">$10,000 – $20,000</option>
+                  <option value="over20k">$20,000+</option>
+                </select>
+              </label>
+              <button class="search-submit" type="submit">
+                <i data-lucide="search"></i>
+                <span data-i18n="searchButton">Find my destination</span>
+              </button>
+            </form>
+          </div>
         </section>
 
-        <section class="market-section" id="centers">
-          <div class="section-heading">
+        <!-- DESTINATION BAND -->
+        <div class="destination-band">
+          <div class="band-scroll">
+            <span>Cuba · Havana</span><span aria-hidden="true">◆</span>
+            <span>Mexico · Mérida</span><span aria-hidden="true">◆</span>
+            <span>South Africa · Cape Town</span><span aria-hidden="true">◆</span>
+            <span>Switzerland · Geneva</span><span aria-hidden="true">◆</span>
+            <span>Japan · Kyoto</span><span aria-hidden="true">◆</span>
+            <span>France · Côte d'Azur</span><span aria-hidden="true">◆</span>
+            <span>Argentina · Mendoza</span><span aria-hidden="true">◆</span>
+            <span>Morocco · Marrakech</span><span aria-hidden="true">◆</span>
+            <span>UAE · Abu Dhabi</span><span aria-hidden="true">◆</span>
+            <span>USA · Santa Fe</span><span aria-hidden="true">◆</span>
+            <span>Cuba · Havana</span><span aria-hidden="true">◆</span>
+            <span>Mexico · Mérida</span><span aria-hidden="true">◆</span>
+            <span>South Africa · Cape Town</span><span aria-hidden="true">◆</span>
+          </div>
+        </div>
+
+        <!-- DESTINATIONS SECTION -->
+        <section class="destinations-section" id="destinations">
+          <div class="section-head">
             <div>
               <span class="eyebrow" data-i18n="marketEyebrow">Global portfolio</span>
-              <h2 data-i18n="marketTitle">Longevity centers across the world</h2>
+              <h2 data-i18n="marketTitle">The world's finest longevity centers</h2>
             </div>
-            <div class="market-stat">
-              <i data-lucide="globe-2"></i>
-              <strong id="matchCount">8</strong>
-              <span data-i18n="matchesLabel">curated matches</span>
+            <div class="head-right">
+              <div class="filter-chips" aria-label="Specialty filter">
+                <button class="chip active" type="button" data-specialty="all" data-i18n="allSpecialties">All</button>
+                <button class="chip" type="button" data-specialty="diagnostics" data-i18n="diagnostics">Diagnostics</button>
+                <button class="chip" type="button" data-specialty="regeneration" data-i18n="regeneration">Regeneration</button>
+                <button class="chip" type="button" data-specialty="metabolic" data-i18n="metabolic">Metabolic</button>
+                <button class="chip" type="button" data-specialty="recovery" data-i18n="recovery">Recovery</button>
+              </div>
+              <div class="match-badge">
+                <strong id="matchCount">10</strong>
+                <span data-i18n="matchesLabel">destinations</span>
+              </div>
             </div>
           </div>
+          <div class="center-grid" id="centerGrid"></div>
+        </section>
 
-          <div class="quick-filters" aria-label="Program filters">
-            <button class="chip active" type="button" data-specialty="all" data-i18n="allSpecialties">All</button>
-            <button class="chip" type="button" data-specialty="diagnostics" data-i18n="diagnostics">Diagnostics</button>
-            <button class="chip" type="button" data-specialty="regeneration" data-i18n="regeneration">Regeneration</button>
-            <button class="chip" type="button" data-specialty="metabolic" data-i18n="metabolic">Metabolic health</button>
-            <button class="chip" type="button" data-specialty="recovery" data-i18n="recovery">Recovery</button>
-          </div>
-
-          <div class="market-layout">
-            <div class="center-grid" id="centerGrid"></div>
-
-            <aside class="atlas-panel" id="atlas">
-              <div class="panel-head">
-                <div>
-                  <span class="eyebrow" data-i18n="atlasEyebrow">World atlas</span>
-                  <h3 data-i18n="atlasTitle">Quiet access, global reach</h3>
-                </div>
-                <span class="live-signal">Live</span>
+        <!-- TREATMENTS SECTION -->
+        <section class="treatments-section" id="treatments">
+          <div class="treatments-inner">
+            <div class="treatments-header">
+              <span class="eyebrow" data-i18n="treatmentsEyebrow">Signature programs</span>
+              <h2 data-i18n="treatmentsTitle">What each stay can include</h2>
+              <p data-i18n="treatmentsSubtitle">Every AeternaCo destination is curated around a core therapeutic philosophy. These are the hallmark disciplines you will find across our network.</p>
+            </div>
+            <div class="treatments-grid">
+              <div class="treatment-card">
+                <div class="treatment-icon"><i data-lucide="microscope"></i></div>
+                <h3 data-i18n="t1Title">Precision Diagnostics</h3>
+                <p data-i18n="t1Text">Full-body biomarker panels, genomic screening, advanced imaging and physician-led interpretation delivered within 72 hours.</p>
+                <div class="treatment-tags"><span>Biomarkers</span><span>Imaging</span><span>Genomics</span></div>
               </div>
-              <div class="world-map" id="worldMap"></div>
-              <div class="atlas-metrics">
-                <article>
-                  <strong>28</strong>
-                  <span data-i18n="countriesMetric">countries in pipeline</span>
-                </article>
-                <article>
-                  <strong>4</strong>
-                  <span data-i18n="languagesMetric">marketplace languages</span>
-                </article>
+              <div class="treatment-card">
+                <div class="treatment-icon"><i data-lucide="dna"></i></div>
+                <h3 data-i18n="t2Title">Cellular Regeneration</h3>
+                <p data-i18n="t2Text">NAD+ protocols, peptide therapies, stem-cell adjacent interventions and circadian reset programs guided by regenerative medicine specialists.</p>
+                <div class="treatment-tags"><span>NAD+</span><span>Peptides</span><span>Circadian</span></div>
               </div>
-            </aside>
+              <div class="treatment-card featured-treatment">
+                <div class="treatment-icon"><i data-lucide="heart-pulse"></i></div>
+                <h3 data-i18n="t3Title">Metabolic Intelligence</h3>
+                <p data-i18n="t3Text">CGM-guided nutrition, insulin sensitivity protocols, body composition analysis and longevity-cuisine meal planning with private chefs.</p>
+                <div class="treatment-tags"><span>CGM</span><span>Nutrition</span><span>Coaching</span></div>
+              </div>
+              <div class="treatment-card">
+                <div class="treatment-icon"><i data-lucide="moon"></i></div>
+                <h3 data-i18n="t4Title">Sleep Architecture</h3>
+                <p data-i18n="t4Text">Polysomnography, chronotherapy, sleep-environment design and pharmacological optimization for restorative deep sleep recovery.</p>
+                <div class="treatment-tags"><span>Sleep study</span><span>Chronotherapy</span></div>
+              </div>
+              <div class="treatment-card">
+                <div class="treatment-icon"><i data-lucide="zap"></i></div>
+                <h3 data-i18n="t5Title">Performance Optimization</h3>
+                <p data-i18n="t5Text">VO₂ max training, HRV monitoring, strength longevity coaching and altitude protocols for peak physical performance well into later decades.</p>
+                <div class="treatment-tags"><span>VO₂max</span><span>HRV</span><span>Altitude</span></div>
+              </div>
+              <div class="treatment-card">
+                <div class="treatment-icon"><i data-lucide="leaf"></i></div>
+                <h3 data-i18n="t6Title">Restorative Recovery</h3>
+                <p data-i18n="t6Text">Hyperbaric oxygen therapy, cryotherapy, infrared sauna protocols, IV nutritional support and structured rest designed to reverse biological fatigue.</p>
+                <div class="treatment-tags"><span>HBOT</span><span>Cryotherapy</span><span>IV therapy</span></div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="standards-band" id="standards">
-          <article>
-            <i data-lucide="stethoscope"></i>
-            <h3 data-i18n="standardOneTitle">Clinical clarity</h3>
-            <p data-i18n="standardOneText">Profiles separate diagnostics, therapies, recovery and concierge services so visitors can compare with confidence.</p>
-          </article>
-          <article>
-            <i data-lucide="badge-check"></i>
-            <h3 data-i18n="standardTwoTitle">Elegant verification</h3>
-            <p data-i18n="standardTwoText">Each listing can show fictional accreditations, physician oversight, language coverage and care pathways.</p>
-          </article>
-          <article>
-            <i data-lucide="messages-square"></i>
-            <h3 data-i18n="standardThreeTitle">Warm handoff</h3>
-            <p data-i18n="standardThreeText">Hover any center to reveal connection details, concierge contacts and the next best step.</p>
-          </article>
+        <!-- PHILOSOPHY -->
+        <section class="philosophy-section" id="philosophy">
+          <div class="philosophy-inner">
+            <div class="philosophy-text">
+              <span class="eyebrow" data-i18n="philEyebrow">Our curation philosophy</span>
+              <h2 data-i18n="philTitle">We select for depth, not prestige.</h2>
+              <p data-i18n="philText1">AeternaCo reviews centers across five dimensions: clinical governance, therapeutic breadth, concierge excellence, setting quality and independent guest outcomes. Only those that perform at the highest tier across all five are offered to our members.</p>
+              <p data-i18n="philText2">Our medical advisory board — composed of leading voices in longevity science, functional medicine and integrative psychiatry — provides independent oversight. No center can pay to be listed. Every inclusion is earned.</p>
+              <div class="phil-standards">
+                <div><i data-lucide="shield-check"></i><span data-i18n="phil1">Independent medical board</span></div>
+                <div><i data-lucide="award"></i><span data-i18n="phil2">No paid placements</span></div>
+                <div><i data-lucide="eye"></i><span data-i18n="phil3">Annual re-certification</span></div>
+                <div><i data-lucide="lock"></i><span data-i18n="phil4">Full discretion guaranteed</span></div>
+              </div>
+            </div>
+            <div class="philosophy-image">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=85" alt="Serene mountain landscape" loading="lazy"/>
+              <div class="phil-quote">
+                <p data-i18n="philQuote">"Longevity is not a treatment. It is a discipline, an environment, and a way of attention."</p>
+                <small>— AeternaCo Medical Board</small>
+              </div>
+            </div>
+          </div>
         </section>
 
+        <!-- MEMBERSHIP -->
+        <section class="membership-section" id="membership">
+          <div class="membership-inner">
+            <span class="eyebrow" data-i18n="memberEyebrow">Private membership</span>
+            <h2 data-i18n="memberTitle">Discretion, priority access and a personal concierge.</h2>
+            <p data-i18n="memberText">AeternaCo membership offers priority reservation windows, a dedicated longevity concierge, access to unpublished center slots and a private health record that travels with you across all network destinations.</p>
+            <div class="membership-tiers">
+              <div class="tier">
+                <span class="tier-name" data-i18n="tier1Name">Luminary</span>
+                <div class="tier-price">From <strong>$4,800</strong><small>/yr</small></div>
+                <ul>
+                  <li data-i18n="tier1a">Priority booking windows</li>
+                  <li data-i18n="tier1b">Dedicated concierge</li>
+                  <li data-i18n="tier1c">Annual health summary</li>
+                  <li data-i18n="tier1d">3 destination credits</li>
+                </ul>
+                <button class="tier-btn" type="button" data-tier="luminary" data-i18n="tierApply">Apply for access</button>
+              </div>
+              <div class="tier featured-tier">
+                <span class="tier-badge" data-i18n="tierFeaturedBadge">Most selected</span>
+                <span class="tier-name" data-i18n="tier2Name">Sovereign</span>
+                <div class="tier-price">From <strong>$12,400</strong><small>/yr</small></div>
+                <ul>
+                  <li data-i18n="tier2a">All Luminary benefits</li>
+                  <li data-i18n="tier2b">Portable health record</li>
+                  <li data-i18n="tier2c">Physician tele-access 24/7</li>
+                  <li data-i18n="tier2d">8 destination credits</li>
+                  <li data-i18n="tier2e">Family inclusion option</li>
+                </ul>
+                <button class="tier-btn" type="button" data-tier="sovereign" data-i18n="tierApply">Apply for access</button>
+              </div>
+              <div class="tier">
+                <span class="tier-name" data-i18n="tier3Name">Foundational</span>
+                <div class="tier-price"><strong data-i18n="tierPrivate">Private pricing</strong></div>
+                <ul>
+                  <li data-i18n="tier3a">All Sovereign benefits</li>
+                  <li data-i18n="tier3b">Family office coordination</li>
+                  <li data-i18n="tier3c">Bespoke medical travel</li>
+                  <li data-i18n="tier3d">Unlimited credits</li>
+                  <li data-i18n="tier3e">Board-level reporting</li>
+                </ul>
+                <button class="tier-btn" type="button" data-tier="foundational" data-i18n="tierEnquire">Private enquiry</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROVIDER CTA -->
         <section class="provider-cta" id="listCenter">
-          <div>
-            <span class="eyebrow" data-i18n="providerEyebrow">For longevity operators</span>
-            <h2 data-i18n="providerTitle">Want your center to appear in the ForeverX marketplace?</h2>
-            <p data-i18n="providerText">
-              Contact ForeverX to review your eligibility, marketplace presentation, CRM access and concierge lead flow.
-            </p>
+          <div class="provider-inner">
+            <div>
+              <span class="eyebrow" data-i18n="providerEyebrow">For operators</span>
+              <h2 data-i18n="providerTitle">List your center in the AeternaCo network</h2>
+              <p data-i18n="providerText">We work with a select number of longevity destinations each year. If your center meets our clinical and hospitality standards, we welcome a private conversation.</p>
+            </div>
+            <button class="provider-button" type="button" id="providerContact">
+              <i data-lucide="mail"></i>
+              <span data-i18n="providerButton">Begin application</span>
+            </button>
           </div>
-          <button class="provider-button" type="button" id="providerContact">
-            <i data-lucide="mail"></i>
-            <span data-i18n="providerButton">Contact ForeverX</span>
-          </button>
         </section>
+
       </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>AeternaCo</strong>
+            <small data-i18n="footerSub">All center names and contacts are entirely fictional, created for demonstration purposes only.</small>
+          </div>
+          <nav class="footer-nav">
+            <a href="#destinations" data-i18n="navDestinations">Destinations</a>
+            <a href="#treatments" data-i18n="navTreatments">Treatments</a>
+            <a href="#philosophy" data-i18n="navPhilosophy">Philosophy</a>
+            <a href="#membership" data-i18n="navMembership">Membership</a>
+          </nav>
+          <p class="footer-copy">© 2025 AeternaCo. Demonstration only.</p>
+        </div>
+      </footer>
     </section>
 
+    <!-- ═══ CRM CONSOLE ═══ -->
     <section class="crm-app" id="crmApp" aria-hidden="true">
-      <aside class="crm-sidebar" aria-label="ForeverX CRM navigation">
+      <aside class="crm-sidebar">
         <a class="brand crm-brand" href="#crmHome">
-          <span class="brand-mark">FX</span>
-          <span>
-            <strong>ForeverX</strong>
-            <small data-i18n="crmBrandSub">Provider console</small>
+          <span class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M11 4 L11 18 M4 11 L18 11" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><circle cx="11" cy="11" r="3" fill="currentColor" opacity=".35"/></svg>
+          </span>
+          <span class="brand-text">
+            <strong>AeternaCo</strong>
+            <small data-i18n="crmBrandSub">Partner console</small>
           </span>
         </a>
-
         <nav class="crm-nav">
-          <a class="active" href="#crmHome"><i data-lucide="activity"></i> <span data-i18n="crmOverview">Overview</span></a>
-          <a href="#crmLeads"><i data-lucide="kanban-square"></i> <span data-i18n="crmLeads">Leads</span></a>
-          <a href="#crmSuites"><i data-lucide="heart-pulse"></i> <span data-i18n="crmPrograms">Programs</span></a>
-          <a href="#crmProfile"><i data-lucide="landmark"></i> <span data-i18n="crmProfile">Listing profile</span></a>
+          <a class="active" href="#crmHome"><i data-lucide="activity"></i><span data-i18n="crmOverview">Overview</span></a>
+          <a href="#crmLeads"><i data-lucide="users"></i><span data-i18n="crmLeads">Enquiries</span></a>
+          <a href="#crmSuites"><i data-lucide="heart-pulse"></i><span data-i18n="crmPrograms">Programs</span></a>
+          <a href="#crmProfile"><i data-lucide="landmark"></i><span data-i18n="crmProfile">Listing profile</span></a>
         </nav>
-
         <button class="market-return" type="button" id="exitCrm">
           <i data-lucide="arrow-left"></i>
           <span data-i18n="returnMarket">Back to marketplace</span>
@@ -213,15 +361,15 @@
       <main class="crm-main">
         <header class="crm-topbar" id="crmHome">
           <div>
-            <span class="eyebrow" data-i18n="crmEyebrow">ForeverX partner CRM</span>
-            <h1 data-i18n="crmTitle">Manage center visibility, enquiries and program demand.</h1>
+            <span class="eyebrow" data-i18n="crmEyebrow">AeternaCo Partner CRM</span>
+            <h1 data-i18n="crmTitle">Manage your center's presence, enquiries and programs.</h1>
           </div>
           <div class="crm-actions">
             <button class="ghost-button" type="button" id="addLeadBtn">
               <i data-lucide="user-plus"></i>
-              <span data-i18n="newLead">New lead</span>
+              <span data-i18n="newLead">New enquiry</span>
             </button>
-            <button class="primary-button compact" type="button" id="syncBtn">
+            <button class="cta-primary compact" type="button" id="syncBtn">
               <i data-lucide="refresh-cw"></i>
               <span data-i18n="sync">Sync</span>
             </button>
@@ -231,23 +379,23 @@
         <section class="crm-metrics">
           <article class="metric featured">
             <span data-i18n="metricRevenue">Qualified pipeline</span>
-            <strong id="pipelineMetric">$1.84M</strong>
+            <strong id="pipelineMetric">$2.34M</strong>
             <small data-i18n="metricRevenueSub">projected annual value</small>
           </article>
           <article class="metric">
             <span data-i18n="metricLeads">Open enquiries</span>
-            <strong id="openLeadMetric">18</strong>
-            <small data-i18n="metricLeadsSub">6 concierge-ready</small>
+            <strong id="openLeadMetric">22</strong>
+            <small data-i18n="metricLeadsSub">8 concierge-ready</small>
           </article>
           <article class="metric">
-            <span data-i18n="metricConversion">Match quality</span>
-            <strong>92%</strong>
-            <small data-i18n="metricConversionSub">based on intent fit</small>
+            <span data-i18n="metricConversion">Guest satisfaction</span>
+            <strong>98%</strong>
+            <small data-i18n="metricConversionSub">post-stay rating</small>
           </article>
           <article class="metric">
             <span data-i18n="metricLanguages">Languages served</span>
-            <strong>9</strong>
-            <small data-i18n="metricLanguagesSub">EN, DE, FR, ES plus more</small>
+            <strong>11</strong>
+            <small data-i18n="metricLanguagesSub">EN, DE, FR, ES, AR +more</small>
           </article>
         </section>
 
@@ -258,9 +406,7 @@
                 <span class="eyebrow" data-i18n="leadEyebrow">Concierge pipeline</span>
                 <h2 data-i18n="leadTitle">High-intent enquiries</h2>
               </div>
-              <button class="icon-button" type="button" aria-label="Filter leads">
-                <i data-lucide="filter"></i>
-              </button>
+              <button class="icon-button" type="button" aria-label="Filter"><i data-lucide="filter"></i></button>
             </div>
             <div class="lead-board" id="leadBoard"></div>
           </section>
@@ -271,7 +417,7 @@
                 <span class="eyebrow" data-i18n="programEyebrow">Program inventory</span>
                 <h2 data-i18n="programTitle">Signature pathways</h2>
               </div>
-              <div class="segmented" aria-label="Program view">
+              <div class="segmented">
                 <button class="active" type="button" data-i18n="now">Now</button>
                 <button type="button" data-i18n="quarter">Quarter</button>
                 <button type="button" data-i18n="year">Year</button>
@@ -283,14 +429,11 @@
 
         <section class="profile-console" id="crmProfile">
           <div class="profile-preview">
-            <img
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
-              alt="Fictional longevity clinic interior"
-            />
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Longevity clinic interior" loading="lazy"/>
             <div>
               <span class="eyebrow" data-i18n="profileEyebrow">Marketplace profile</span>
               <h2>Vellora Institute Geneva</h2>
-              <p data-i18n="profileText">Diagnostics-first flagship listing with private physician review, recovery suites and family-office concierge.</p>
+              <p data-i18n="profileText">Diagnostics-first flagship with private physician review, recovery suites and family-office concierge.</p>
             </div>
           </div>
           <div class="profile-controls">
@@ -302,7 +445,11 @@
               <span data-i18n="profileMessage">Commercial message</span>
               <input type="text" value="Precision diagnostics, calm hospitality and medically governed recovery." />
             </label>
-            <button class="primary-button" type="button">
+            <label>
+              <span data-i18n="profileAvail">Next availability</span>
+              <input type="text" value="March 14, 2025" />
+            </label>
+            <button class="cta-primary" type="button">
               <i data-lucide="save"></i>
               <span data-i18n="saveProfile">Save profile</span>
             </button>
@@ -311,34 +458,187 @@
       </main>
     </section>
 
+    <!-- ═══ CENTER DETAIL MODAL ═══ -->
     <dialog class="center-dialog" id="centerDialog">
-      <form method="dialog" class="center-modal">
-        <button class="icon-button close-button" type="button" id="closeDialog" aria-label="Close">
-          <i data-lucide="x"></i>
-        </button>
-        <img id="modalImage" alt="" />
+      <button class="modal-close" type="button" id="closeDialog" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-layout">
+        <div class="modal-image-col">
+          <img id="modalImage" alt="" />
+          <div class="modal-image-meta">
+            <span class="eyebrow" id="modalRegion"></span>
+            <div class="modal-rating-row">
+              <span class="modal-stars" id="modalStars"></span>
+              <span id="modalRatingVal"></span>
+            </div>
+          </div>
+        </div>
         <div class="modal-content">
-          <span class="eyebrow" id="modalRegion"></span>
           <h2 id="modalTitle"></h2>
           <p id="modalSummary"></p>
           <div class="modal-details" id="modalDetails"></div>
+          <div class="modal-specialties" id="modalSpecialties"></div>
           <div class="contact-box">
             <div>
-              <span data-i18n="contactLine">Fictional concierge contact</span>
+              <span data-i18n="contactLine">Concierge contact</span>
               <strong id="modalContact"></strong>
             </div>
-            <button class="primary-button compact" type="button" id="requestIntro">
-              <i data-lucide="mail-check"></i>
-              <span data-i18n="requestIntro">Request intro</span>
+            <button class="cta-primary compact" type="button" id="requestIntro">
+              <i data-lucide="calendar-check"></i>
+              <span data-i18n="requestIntro">Request a stay</span>
             </button>
           </div>
         </div>
-      </form>
+      </div>
+    </dialog>
+
+    <!-- ═══ RESERVATION MODAL ═══ -->
+    <dialog class="reserve-dialog" id="reserveDialog">
+      <button class="modal-close" type="button" id="closeReserve" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="reserve-inner">
+        <div class="reserve-header">
+          <span class="eyebrow" data-i18n="reserveEyebrow">AeternaCo · Private Reservation</span>
+          <h2 data-i18n="reserveTitle">Reserve your longevity stay</h2>
+          <p data-i18n="reserveSubtitle">Our concierge team will contact you within 24 hours to confirm availability and customise your program.</p>
+        </div>
+        <div class="reserve-steps">
+          <div class="step active" data-step="1"><span>1</span><small data-i18n="step1">Destination</small></div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2"><span>2</span><small data-i18n="step2">Dates & program</small></div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3"><span>3</span><small data-i18n="step3">Your details</small></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="reserve-step-content" id="reserveStep1">
+          <h3 data-i18n="chooseDestination">Choose your destination</h3>
+          <div class="destination-picker" id="destinationPicker"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reserve-step-content hidden" id="reserveStep2">
+          <h3 data-i18n="chooseDates">Dates & program</h3>
+          <div class="step2-grid">
+            <label>
+              <span data-i18n="arrivalLabel">Preferred arrival</span>
+              <input type="month" id="reserveMonth" />
+            </label>
+            <label>
+              <span data-i18n="durationLabel">Duration</span>
+              <select id="reserveDuration">
+                <option value="3-5">3–5 days</option>
+                <option value="7-10">7–10 days</option>
+                <option value="14+">14+ days</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="guestsLabel">Number of guests</span>
+              <select id="reserveGuests">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3-4">3–4 guests</option>
+                <option value="5+">5+ guests</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="focusLabel">Primary focus</span>
+              <select id="reserveFocus">
+                <option value="diagnostics">Precision diagnostics</option>
+                <option value="regeneration">Cellular regeneration</option>
+                <option value="metabolic">Metabolic health</option>
+                <option value="recovery">Recovery & restoration</option>
+                <option value="sleep">Sleep architecture</option>
+              </select>
+            </label>
+          </div>
+          <label class="full-label">
+            <span data-i18n="notesLabel">Special considerations or health context</span>
+            <textarea id="reserveNotes" rows="3" placeholder="Optional — our concierge keeps all details fully private."></textarea>
+          </label>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reserve-step-content hidden" id="reserveStep3">
+          <h3 data-i18n="yourDetails">Your details</h3>
+          <div class="step3-grid">
+            <label>
+              <span data-i18n="nameLabel">Full name</span>
+              <input type="text" id="reserveName" placeholder="Fictional name" />
+            </label>
+            <label>
+              <span data-i18n="emailLabel">Private email</span>
+              <input type="email" id="reserveEmail" placeholder="your@email.com" />
+            </label>
+            <label>
+              <span data-i18n="phoneLabel">Phone (with country code)</span>
+              <input type="tel" id="reservePhone" placeholder="+1 555 000 0000" />
+            </label>
+            <label>
+              <span data-i18n="languageLabel">Preferred language</span>
+              <select id="reserveLang">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+              </select>
+            </label>
+          </div>
+          <label class="full-label">
+            <span data-i18n="memberLabel">AeternaCo membership number (if any)</span>
+            <input type="text" id="reserveMember" placeholder="AE-XXXXXX · leave blank if not yet a member" />
+          </label>
+          <div class="privacy-note">
+            <i data-lucide="lock"></i>
+            <small data-i18n="privacyNote">All information is held in strict confidence. AeternaCo does not share guest data with any third party.</small>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="reserve-step-content hidden" id="reserveStep4">
+          <div class="confirm-view">
+            <div class="confirm-icon"><i data-lucide="check-circle-2"></i></div>
+            <h3 data-i18n="confirmTitle">Reservation received</h3>
+            <p data-i18n="confirmText">Your concierge will reach out within 24 hours to confirm availability and begin curating your stay. All details are held in the strictest confidence.</p>
+            <div class="confirm-ref">
+              <span data-i18n="refLabel">Reference</span>
+              <strong id="confirmRef">AE-2025-0000</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="reserve-footer">
+          <button class="ghost-button" type="button" id="reserveBack" style="display:none" data-i18n="back">Back</button>
+          <button class="cta-primary" type="button" id="reserveNext">
+            <span data-i18n="continueBtn">Continue</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- MEMBERSHIP MODAL -->
+    <dialog class="membership-dialog" id="membershipDialog">
+      <button class="modal-close" type="button" id="closeMembership" aria-label="Close"><i data-lucide="x"></i></button>
+      <div class="membership-dialog-inner">
+        <span class="eyebrow">AeternaCo · Private Membership</span>
+        <h2 id="membershipTitle">Apply for Sovereign access</h2>
+        <p data-i18n="membershipDialogText">This is a demonstration form. In a real environment, our membership committee reviews each application within 5 business days.</p>
+        <div class="member-form-grid">
+          <label><span>Full name</span><input type="text" placeholder="Fictional name"/></label>
+          <label><span>Email</span><input type="email" placeholder="your@email.com"/></label>
+          <label class="full-label"><span>How did you hear about AeternaCo?</span><textarea rows="2"></textarea></label>
+        </div>
+        <button class="cta-primary" type="button" id="submitMembership">Submit application</button>
+      </div>
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script type="module" src="./script.js?v=topbar"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
